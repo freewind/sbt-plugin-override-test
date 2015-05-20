@@ -1,1 +1,1 @@
-addSbtPlugin("test20140913" % "my-sbt-plugin" % "0.1.0.DEV-SNAPSHOT")
+addSbtPlugin("test20150520" % "my-sbt-plugin" % "sbt-plugin-override.DEV-SNAPSHOT")

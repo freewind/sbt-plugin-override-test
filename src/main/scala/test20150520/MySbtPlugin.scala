@@ -11,6 +11,7 @@ object MySbtPlugin extends AutoPlugin {
   // content inside `autoImport` will be merged into sbt config
   object autoImport {
     lazy val hello = taskKey[Unit]("hello task from my plugin")
+    lazy val helloMessage = settingKey[Option[String]]("the message for hello")
   }
 
   import autoImport._
@@ -32,10 +33,9 @@ object MySbtPlugin extends AutoPlugin {
   // This plugins requires JvmPlugin. If it doesn't require anything, can give it a `Nil`, or not override it
   override def requires = plugins.JvmPlugin
 
-  val helloSetting = hello := println("Hello from my plugin")
-
   override def projectSettings = Seq(
-    helloSetting
+    helloMessage in ThisBuild := None,
+    hello := println("Hello from my plugin: " + helloMessage.value)
   )
 
 }

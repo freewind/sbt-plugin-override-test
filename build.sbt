@@ -1,8 +1,8 @@
 sbtPlugin := true
 
-organization := "test20140913"
+organization := "test20150520"
 
 name := "my-sbt-plugin"
 
-version := "0.1.0.DEV-SNAPSHOT"
+version := "sbt-plugin-override.DEV-SNAPSHOT"
 
